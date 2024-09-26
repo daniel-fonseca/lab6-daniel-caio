@@ -25,7 +25,7 @@ public class ScenarioBase {
                     System.out.println("Nenhuma tarefa foi processada ate o momento");
                     return;
                 }
-                long totalTime = 0;
+                
 
                 for(Task task : processedTasks){
                     long timeActive = System.currentTimeMillis() - task.getCreationTime();
