@@ -18,10 +18,9 @@ public class TaskProducer implements Runnable {
                 Task task = new Task(idTask++);
                 taskQueue.put(task);
                 System.out.println("Produtor " + idProdutor + " produziu a task de id " + task.getId());
-            } catch (InterruptedException e) {
+            }} catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
                 System.out.println("Produtor " + idProdutor + "foi interrompido");
             }
-        }
     }
 }
