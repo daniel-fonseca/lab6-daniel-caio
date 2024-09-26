@@ -11,11 +11,16 @@ public class Node implements Runnable {
 
     @Override
     public void run() {
-      while(true){
-        Task task = taskQueue.take();
-        System.out.println("Node " + Thread.currentThread().getName() + "processando tarefa " + task.getId());
-        task.execute();
-        System.out.println("Node " + Thread.currentThread().getName() + "completou a tarefa " + task.getId());
-      }
+      try{
+        while(true){
+          Task task = taskQueue.take();
+          System.out.println("Node " + Thread.currentThread().getName() + "processando tarefa " + task.getId());
+          task.execute();
+          System.out.println("Node " + Thread.currentThread().getName() + "completou a tarefa " + task.getId());
+        }
+      }catch(InterruptedException e){
+        Thread.currentThread().interrupt();
+        System.out.println("Node interrompido");
+    }
   }
 }
