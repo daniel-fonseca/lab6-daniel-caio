@@ -4,11 +4,11 @@ public class TaskProducer implements Runnable {
 
     private final BlockingQueue<Task> taskQueue;
     private int idProdutor;
-    private long idTask = 0;
+    private final long idTask = 0;
 
     public TaskProducer(BlockingQueue<Task> taskQueue, int idProdutor) {
-        taskQueue = this.taskQueue;
-        idProdutor = this.idProdutor;
+        this.taskQueue = taskQueue;
+        this.idProdutor = idProdutor;
     }
 
     @Override
