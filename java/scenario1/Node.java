@@ -5,12 +5,9 @@ public class Node implements Runnable {
 
   private final BlockingQueue<Task> taskQueue;
   private final List<Task> processedTasks;
-  private final int nodeId;
-
   public Node(int nodeId,BlockingQueue<Task> taskQueue, List<Task> processedTasks){
     this.taskQueue = taskQueue;
     this.processedTasks = processedTasks;
-    this.nodeId = nodeId;
   }
 
     @Override

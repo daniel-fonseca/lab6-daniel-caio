@@ -4,7 +4,7 @@ import java.util.concurrent.atomic.AtomicLong;
 public class TaskProducer implements Runnable {
     private final BlockingQueue<Task> taskQueue;
     private final int idProdutor;
-    private static final AtomicLong idTaskGenerator = new AtomicLong(0); // Gerador de IDs únicos
+    private static final AtomicLong idTaskGenerator = new AtomicLong(0);
 
     public TaskProducer(BlockingQueue<Task> taskQueue, int idProdutor) {
         this.taskQueue = taskQueue;
@@ -19,7 +19,7 @@ public class TaskProducer implements Runnable {
                 Task task = new Task(idTask);
                 taskQueue.put(task);
                 System.out.println("Produtor " + idProdutor + " produziu a tarefa de id " + task.getId());
-                Thread.sleep(5000);
+                Thread.sleep(5000); 
             }
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
