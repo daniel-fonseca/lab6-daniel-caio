@@ -13,9 +13,9 @@ public class TaskProducer implements Runnable {
 
     @Override
     public void run() {
-        while (true) {
-            Task task = new Task(idTask++);
-            try {
+        try {
+            while (true) {
+                Task task = new Task(idTask++);
                 taskQueue.put(task);
                 System.out.println("Produtor " + idProdutor + " produziu a task de id " + task.getId());
             } catch (InterruptedException e) {
